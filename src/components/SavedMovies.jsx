@@ -7,7 +7,7 @@ class SavedMovies extends Component {
         return (
             <div>
                 <h2>Watchlist</h2>
-                <div>
+                <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
                 { this.props.movies.map((movie, index) => {
                 return (
                     <SavedCard movie={movie} key={index} /> )

@@ -1,23 +1,24 @@
 import React from 'react';
 import { addMovie } from '../redux/action';
 import { connect } from 'react-redux';
-import { Card } from 'react-bootstrap';
-import { Button } from 'react-bootstrap';
+import { Card, Col, Button } from 'react-bootstrap';
+
 
 function MovieCard(props) {
     return (
-    <div>
-        <Card style={{ width: '18rem', margin: '10px', display: 'flex', flexWrap: 'wrap', flexDirection: 'column'  }}>
+    <Col h={6} md={4} lg={3}>
+        <Card style={{ width: '18rem', margin: '30px', display: 'flex', flexWrap: 'wrap', flexDirection: 'column'  }}>
             <Card.Img variant="top" src={props.movie.Poster} />
             <Card.Body>
                 <Card.Title>{props.movie.Title}</Card.Title>
                 <Card.Text>
                     {props.movie.Year}
+
                 </Card.Text>
                 <Button onClick={() => {props.addMovie(props.movie)}}variant="primary">Save</Button>
             </Card.Body>
         </Card>
-    </div>
+    </Col>
 
         // <div className='Card'>
         //     <div className='Information'>
